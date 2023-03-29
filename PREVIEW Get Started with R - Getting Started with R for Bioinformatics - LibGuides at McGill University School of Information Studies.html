@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!-- saved from url=(0098)https://mcgill-lis.libguides.com/c.php?g=733912&p=5277946&preview=0c68c1d45946ac3321fd10154d0c1329 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <title>PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow,noarchive"><!-- favicon.twig -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/site.webmanifest">
+<link rel="mask-icon" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://libapps-ca.s3.amazonaws.com/apps/common/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="//libapps-ca.s3.amazonaws.com/apps/common/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<!-- !favicon.twig -->
+<!-- public_metadata.twig -->
+
+    <!-- auto generated dublin core metadata -->
+    <meta name="DC.Title" content="LibGuides: Getting Started with R for Bioinformatics: Get Started with R">
+    <meta name="DC.Creator" content="Rebekah Willson">
+    <meta name="DC.Subject" content="">
+    <meta name="DC.Description" content="">
+    <meta name="DC.Publishers" content="McGill University School of Information Studies">
+    <meta name="DC.Rights" content="Copyright McGill University School of Information Studies 2023">
+    <meta name="DC.Language" content="en">
+    <meta name="DC.Identifier" content="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946">
+    <meta name="DC.Date.Created" content="Feb 7, 2023">
+    <meta name="DC.Date.Modified" content="Feb 24, 2023">
+    
+		<meta property="og:title" content="LibGuides: Getting Started with R for Bioinformatics: Get Started with R">
+		<meta property="og:description" content="LibGuides: Getting Started with R for Bioinformatics: Get Started with R">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@springshare"><link rel="stylesheet" href="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/jquery-ui.min.css"><link rel="stylesheet" href="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/slick.css"><link rel="stylesheet" type="text/css" href="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/slick-theme.css"><link rel="stylesheet" href="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/lg-public.min.css"><script type="text/javascript" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/1.12.4_jquery.min.js"></script><script>
+                    jQuery(document).ready(function () {
+                     jQuery(".dropdown-toggle").on("click",function(e){
+                        jQuery(this).siblings("ul.s-lg-subtab-ul.dropdown-menu").toggle();
+                       })
+                     });
+             </script><!-- js_include_fallback.twig -->
+    <script src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/jquery-ui.min.js"></script>
+    <script>
+        jQuery.ui ||
+        document.write('<script src="/web/jquery/js/jquery-ui.min.js?2695">\x3C/script>');
+    </script>
+<!-- !js_include_fallback.twig --><script type="text/javascript" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/lg-public.min.js"></script><style>/** bootstrap_tab_css.twig **/
+#s-lg-tabs-container .nav-tabs > li > a,
+#s-lg-tabs-container .nav-tabs > li > button,
+#s-lg-tabs-container .nav-pills > li > a,
+#s-lg-tabs-container .nav-pills > li > button {
+    border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+    background-color: #637485;
+    color: #fff;
+    font-weight: bold;
+    padding: 4px 15px;
+}
+
+#s-lg-tabs-container .nav-tabs {
+    border-bottom: 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li#s-lg-admin-tab-add > a {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a:hover,
+#s-lg-tabs-container .nav-tabs > li > button:hover,
+#s-lg-tabs-container .nav-pills > li > a:hover,
+#s-lg-tabs-container .nav-pills > li > button:hover {
+    border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+    background-color: #447098;
+    color: #fff;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > button,
+#s-lg-tabs-container .nav-pills > .active > a,
+#s-lg-tabs-container .nav-pills > .active > button {
+    color: #fff;
+    cursor: default;
+    background-color: #447098;
+    border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > a,
+#s-lg-tabs-container .nav-tabs > .active > .s-lg-subtab-ul > .active > button {
+    color: #fff;
+    cursor: default;
+    background-color: #447098;
+    border-bottom-color: transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > .active > a:hover,
+#s-lg-tabs-container .nav-pills > .active > a:hover,
+#s-lg-tabs-container .nav-tabs > .active > button:hover,
+#s-lg-tabs-container .nav-pills > .active > button:hover {
+    color: #fff;
+    cursor: pointer;
+    background-color: #447098;
+    border: 1px solid transparent; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+    border-bottom-color: transparent;
+    font-weight: bold;
+}
+
+#s-lg-tabs-container .nav .dropdown-toggle .caret {
+    border-top-color: #e1e1e1;
+}
+
+#s-lg-tabs-container .nav-tabs button.dropdown-toggle .caret {
+    margin-left: 2px;
+    margin-top: -3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop {
+    border-radius: 0 4px 0 0;
+    padding: 4px 6px 4px 3px;
+    border-left: 1px solid transparent;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 0 0;
+    padding: 4px 6px 0px 3px;
+    border-left: 1px solid transparent;
+    margin-right: 2px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-drop:hover {
+    border-radius: 0 4px 0 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 4px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 0 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 6px 0px 3px;
+}
+
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-tabs > li > button.s-lg-tab-top-link:hover {
+    border-radius: 4px 0 0 0;
+    font-weight: bold;
+    padding: 4px 5px 4px 10px;
+}
+
+.nav-tabs > li > a.s-lg-tab-top-link,
+.nav-tabs > li > button.s-lg-tab-top-link {
+    margin-right: 0px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop {
+    border-radius: 0 4px 0 0;
+    padding: 4px 8px 4px 8px;
+    border-left: 1px solid transparent;
+    position: absolute;
+    right: 0;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-drop:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-drop:hover {
+    border-radius: 0 4px 0 0;
+    border-left: 1px solid #bbb;
+    padding: 4px 8px 4px 8px;
+}
+
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills > li > button.s-lg-tab-top-link:hover {
+    width: 100%;
+    float: left;
+    border-radius: 4px 0 0 0;
+    font-weight: bold;
+    padding: 4px 15px 4px 15px;
+}
+
+/** !bootstrap_tab_css.twig **/
+ .s-lib-box {border-color: #cccccc;
+                border-width: 1px;
+                box-shadow: 0 8px 6px -6px #AAAAAA;
+                border-radius: 4px 4px 4px 4px;
+                background-color: #fff;
+            }
+            .s-lib-box-std .s-lib-box-title {background-color: #447098; background-image: none;color: #ffffff;
+                border-bottom: 1px solid #cccccc;
+            }
+            .s-lib-box .s-lib-box-title {background-color: #447098; background-image: none;color: #ffffff;
+                border-bottom: 1px solid #cccccc;
+                border-radius: 3px 3px 0px 0px;
+            }
+            .s-lib-box .s-lg-box-footer {
+                border-radius: 0px 0px 3px 3px;
+            }</style><script>
+    var springStats = springStats || {};
+    springStats.saConfig = springStats.saConfig || {
+        site_id: 13229,
+        tracking_parameters: {"_st_guide_id":733912,"_st_page_id":5277946,"_st_site_id":13229},
+        tracking_server_host: "libguides-proc-ca.springyaws.com"
+    };
+</script>
+<script async="" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/sa.min.js"></script>
+<script>
+			springSpace.Common = springSpace.Common || { };
+			springSpace.Common.constant = {
+					PROCESSING: {
+						ACTION_DISPLAY_POLL: 159
+					}
+			};
+			springSpace.Common.baseURL = "https://mcgill-lis.libguides.com/";
+			
+			handleScroll=function() {
+                if (false) {
+					var target_elt = "#s-lg-page-section-5277946";
+					jQuery("html, body").animate({ scrollTop: jQuery(target_elt).offset().top }, 750);
+					if (jQuery(this).scrollTop() > 220) {
+						jQuery("#s-lib-scroll-top").fadeIn(750);
+					}
+				}
+			}
+	   </script>
+        <script>
+            // Enable tooltips.
+            jQuery(function () {
+                try {
+                    springSpace.UI.initPopOvers();
+                    jQuery(".az-bs-tooltip").tooltip();
+                } catch (e) { }
+            });jQuery(window).one('load', function() {springSpace.springTrack.trackPage({_st_type_id: '1',_st_guide_id: '733912',_st_page_id: '5277946'});});
+            jQuery(document).ready(function() {
+                handleScroll();
+            });
+        </script></head>
+<body class="s-lg-guide-body" data-new-gr-c-s-check-loaded="14.1102.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+<a id="s-lg-public-skiplink" class="alert-info" href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lg-guide-main">Skip to Main Content</a><!-- BEGIN: Page Header -->
+ <div id="s-lib-banner" class="container s-lib-banner-public"><a href="https://www.mcgill.ca/sis/programs/gradcert/lis" title="" target="" aria-hidden="true" tabindex="-1"><img alt="Banner" name="s-lib-banner-img" id="s-lib-banner-img" class="img-responsive" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/McGill_University_-School_of_Information_Studies.jpg" aria-hidden="true" tabindex="-1"></a></div><!-- END: Page Header -->
+<!-- BEGIN: Guide Info Header -->
+<div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+    <nav id="s-lib-bc" aria-label="breadcrumb">
+        <ol id="s-lib-bc-list" class="breadcrumb"><li id="s-lib-bc-customer" class="breadcrumb-item"><a href="https://www.mcgill.ca/sis/programs/gradcert/lis">McGill University School of Information Studies</a></li><li id="s-lib-bc-site" class="breadcrumb-item"><a href="https://mcgill-lis.libguides.com/">LibGuides</a></li><li id="s-lib-bc-guide" class="breadcrumb-item"><a href="https://mcgill-lis.libguides.com/c.php?g=733912">Getting Started with R for Bioinformatics</a></li><li id="s-lib-bc-page" class="active breadcrumb-item">Get Started with R</li></ol>    </nav>
+    <div class="pull-right">
+        <div id="s-lg-guide-header-search">
+            
+                <div id="s-lg-guide-search-box">
+                    <form role="search" id="s-lg-guide-search-form" action="https://mcgill-lis.libguides.com/srch.php" method="GET">
+                        <div class="input-group input-group-sm">
+                            <input type="text" id="s-lg-guide-search-terms" name="q" class="form-control" placeholder="Search this Guide">
+                            <label class="sr-only" for="s-lg-guide-search-terms">Search this Guide</label><input type="hidden" name="guide_id" value="733912">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>        </div>
+            </div>
+    <div id="s-lg-guide-header-info">
+        <h1 id="s-lg-guide-name">Getting Started with R for Bioinformatics: Get Started with R</h1>
+        <div id="s-lg-guide-desc-container">
+            <span id="s-lg-guide-description"></span>
+        </div>
+    </div>
+</div>
+<!-- END: Guide Info Header -->
+<div id="s-lg-tabs-container" class="container s-lib-side-borders pad-top-med">
+    <div id="s-lg-guide-tabs" class="tabs" role="navigation" aria-label="Guide Pages">
+        <ul class="nav nav-tabs split-button-nav">
+            <li role="menuitem" class=""><a title="" class="" href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5279206&amp;preview=0c68c1d45946ac3321fd10154d0c1329"><span>Home</span></a></li><li role="menuitem" class="active"><a title="" class="active" href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329"><span>Get Started with R</span></a></li><li role="menuitem" class=""><a title="" class="" href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5278933&amp;preview=0c68c1d45946ac3321fd10154d0c1329"><span>Bioinformatic Analyses</span></a></li>        </ul>
+    </div>
+</div>
+<div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+<!-- BEGIN: Guide Content -->
+<div id="s-lg-guide-main" class="container s-lib-main s-lib-side-borders" tabindex="-1">
+        <div class="row s-lg-row"><div id="s-lg-col-126" class="col-md-12"><div class="s-lg-col-boxes s-lg-box-special"><div id="s-lg-box-wrapper-19618779" class="s-lg-box-wrapper-19618779">
+					<div id="s-lg-box-16612972-container" class="s-lib-box-container">
+						<div id="s-lg-box-16612972" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">What is on this page?
+                                </h2>
+							<div id="s-lg-box-collapse-16612972">
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-36671567" class="  clearfix">
+				<p>This page contains the resources you need to get started with coding in R. While this guide is intended for science students, the resources here are still quite general and can be used for a variety of applications.&nbsp;</p>
+
+<p>Each resource is hyperlinked with a description below the link on how it is intended to be used</p>
+
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div></div><div class="row s-lg-row"><div id="s-lg-col-1" class="col-md-3"><div class="s-lg-col-boxes"><div id="s-lg-box-wrapper-19618782" class="s-lg-box-wrapper-19618782">
+					<div id="s-lg-box-16612975-container" class="s-lib-box-container">
+						<div id="s-lg-box-16612975" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Glossary
+                                </h2>
+							<div id="s-lg-box-collapse-16612975">
+								<div class="s-lib-box-content">
+									
+			<div id="s-lg-content-36671560" class="  clearfix">
+				<p>When learning a new technique, there is sometimes some confusion when you come across terminology you haven't hard before, even when using resources designed for beginners. Some common terms that can cause confusion among beginner R users can be found below.&nbsp;</p>
+
+<p><strong>R</strong>: R is the software environment that is normally used for statistics and data visualization. Note that you cannot "interact" with R on its own. You will need to download R Studio.&nbsp;</p>
+
+<p><strong>R Studio</strong>: this is the most popular application for coding in R.&nbsp;</p>
+
+<p><strong>Posit:&nbsp;</strong>The company that maintains R recently changed their name. You may see official resources listed under R or under Posit, it is the same organization.&nbsp;</p>
+
+<p><strong>Base R:&nbsp;</strong>This is how people commonly refer to the set of functions that come pre-installed when you download R for the first time.&nbsp;</p>
+
+<p><strong>Package: </strong>These are the extra elements of code that you need to download on your own to do specific analyses. Base R is not extensive, and you will often need extra packages to complete your work.&nbsp;</p>
+
+<p><strong>CRAN:&nbsp;</strong>Comprehensive R Archive Network. You can think of this as the app store for the different R packages and software.</p>
+
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-19618996" class="s-lg-box-wrapper-19618996">
+					<div id="s-lg-box-16613158-container" class="s-lib-box-container">
+						<div id="s-lg-box-16613158" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Books
+                                </h2>
+							<div id="s-lg-box-collapse-16613158">
+								<div class="s-lib-box-content">
+									<div id="s-lib-ctabs-16613158" class="s-lib-jqtabs">
+    <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16613158-0" role="tab" data-toggle="tab">Resources</a></li>
+                    <li role="presentation"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16613158-1" role="tab" data-toggle="tab">APA Citations</a></li>
+            </ul>
+    <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="s-lib-ctab-16613158-0">
+                
+			<div id="s-lg-content-36674302" class="  clearfix">
+				<p>These books are not for any specific functions or tasks in R. These are just general reference books. Resources for specific functions and tasks can be found under "key packages".</p>
+		   </div><div class=""><ul id="s-lg-link-list-3437297" class="s-lg-link-list s-lg-link-list-5"><li class=""><div id="s-lg-content-36671934" class="s-lg-book clearfix"><div class="s-lg-book-props"><a href="https://r4ds.had.co.nz/" onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: &#39;3&#39;,_st_content_id: &#39;36671934&#39;,_st_inc_return: this});"><span id="s-lg-book-cover-36671934" class="s-lg-book-cover"><img loading="lazy" alt="Cover Art" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/index.aspx" class="pull-left s-lg-book-cover-img-0"></span><span id="s-lg-book-title-36671934" class="s-lg-book-title">R for Data Science</span><span id="s-lg-book-by-36671934" class="s-lg-book-by"> by </span><span id="s-lg-book-author-36671934" class="s-lg-book-author">Hadley Wickham; Garrett Grolemund</span></a><div class="s-lg-book-prop-isbn">ISBN: 9781491910368</div><div class="s-lg-book-prop-pubdate">Publication Date: 2016-12-12</div></div></div></li></ul></div>
+			<div id="s-lg-content-36671979" class="  clearfix">
+				<p>R for Data Science is the foundational textbook for all things R. It is available as an ebook via the McGill Library. This is not something you are meant to read cover to cover.&nbsp; It contains information on basic functions and explains the different datatypes that are used within the R environment. It also offers an&nbsp;introduction to models and functions. This book is available through the McGill Library and via the hyperlink included above.&nbsp;</p>
+
+		   </div><div class=""><ul id="s-lg-link-list-3437296" class="s-lg-link-list s-lg-link-list-5"><li class=""><div id="s-lg-content-36671933" class="s-lg-book clearfix"><div class="s-lg-book-props"><a href="https://adv-r.hadley.nz/" onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: &#39;3&#39;,_st_content_id: &#39;36671933&#39;,_st_inc_return: this});"><span id="s-lg-book-cover-36671933" class="s-lg-book-cover"><img loading="lazy" alt="Cover Art" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/index(1).aspx" class="pull-left s-lg-book-cover-img-0"></span><span id="s-lg-book-title-36671933" class="s-lg-book-title">Advanced R</span><span id="s-lg-book-by-36671933" class="s-lg-book-by"> by </span><span id="s-lg-book-author-36671933" class="s-lg-book-author">Hadley Wickham</span></a><div class="s-lg-book-prop-isbn">ISBN: 1498759807</div><div class="s-lg-book-prop-pubdate">Publication Date: 2015-09-15</div></div></div></li></ul></div>
+			<div id="s-lg-content-36671981" class="  clearfix">
+				<p>Even as a beginner, there are sometimes very specific advanced functions that you require for your analysis. If this is the case, this is a great resource to get more information. You can consider this the sequel to the R for Data Science book listed above. This book is also available through the McGill Library and online through the hyperlink included above.&nbsp;</p>
+
+		   </div>
+            </div>
+                    <div role="tabpanel" class="tab-pane " id="s-lib-ctab-16613158-1">
+                
+			<div id="s-lg-content-36674311" class="  clearfix">
+				<p style="text-indent: -17px; padding-left: 17px;">Wickham, H., &amp; Grolemund, G. (2016). <em>R for data science: import, tidy, transform, visualize, and model data</em>. O'Reilly Media.&nbsp;https://learning.oreilly.com/library/view/r-for-data/9781491910382/?sso_link=yes&amp;sso_link_from=mcgill-universit</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Wickham, H (2015).<em> Advanced R</em>. CRC Press. https://www.taylorfrancis.com/books/9780429192678.</p>
+
+<p>&nbsp;</p>
+
+		   </div>
+            </div>
+            </div>
+</div>
+<script>
+    // Every time a tab is switched, remove the tabindex for accessibility and keyboard nav
+    jQuery('#s-lib-ctabs-16613158 ul.nav-tabs li a').on('shown.bs.tab', function (e) {
+        jQuery('#s-lib-ctabs-16613158 ul.nav-tabs li a').removeAttr('tabindex');
+    });
+
+    // Support direct linking to tabs
+    jQuery(function() {
+        var hash = window.location.hash;
+
+        // Don't try to acccess garbage parameters
+        if (hash.length === 0 || jQuery('.s-lib-jqtabs a[href="' + hash + '"]').get(0) === undefined) {
+            return;
+        }
+
+        // Show the tab
+        jQuery('.s-lib-jqtabs a[href="' + hash + '"]').tab('show');
+    });
+</script>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div><div id="s-lg-col-2" class="col-md-6"><div class="s-lg-col-boxes"><div id="s-lg-box-wrapper-19618784" class="s-lg-box-wrapper-19618784">
+					<div id="s-lg-box-16612977-container" class="s-lib-box-container">
+						<div id="s-lg-box-16612977" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Video Tutorial
+                                </h2>
+							<div id="s-lg-box-collapse-16612977">
+								<div class="s-lib-box-content">
+									<div id="s-lib-ctabs-16612977" class="s-lib-jqtabs">
+    <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612977-0" role="tab" data-toggle="tab">Video</a></li>
+                    <li role="presentation"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612977-1" role="tab" data-toggle="tab">APA Citations</a></li>
+            </ul>
+    <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="s-lib-ctab-16612977-0">
+                
+        <div id="s-lg-content-36671628" class="s-lg-widget "><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed-container"><iframe src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/lVKMsaWju8w.html" frameborder="0" allowfullscreen=""></iframe></div>
+        </div>
+			<div id="s-lg-content-36672020" class="  clearfix">
+				<p>This is a YouTube tutorial that will walk you through the installation of R and RStudio. It also walks you through the different components of the RStudio interface and shows you how to run basic commands.&nbsp;</p>
+		   </div>
+            </div>
+                    <div role="tabpanel" class="tab-pane " id="s-lib-ctab-16612977-1">
+                
+			<div id="s-lg-content-36674313" class="  clearfix">
+				<p style="text-indent: -17px; padding-left: 17px;">How to R. (2013, September 11). <i>Getting started with R and Rstudio</i>&nbsp;[Video]. YouTube. https://www.youtube.com/watch?v=lVKMsaWju8w&amp;ab_channel=HowToR</p>
+
+		   </div>
+            </div>
+            </div>
+</div>
+<script>
+    // Every time a tab is switched, remove the tabindex for accessibility and keyboard nav
+    jQuery('#s-lib-ctabs-16612977 ul.nav-tabs li a').on('shown.bs.tab', function (e) {
+        jQuery('#s-lib-ctabs-16612977 ul.nav-tabs li a').removeAttr('tabindex');
+    });
+
+    // Support direct linking to tabs
+    jQuery(function() {
+        var hash = window.location.hash;
+
+        // Don't try to acccess garbage parameters
+        if (hash.length === 0 || jQuery('.s-lib-jqtabs a[href="' + hash + '"]').get(0) === undefined) {
+            return;
+        }
+
+        // Show the tab
+        jQuery('.s-lib-jqtabs a[href="' + hash + '"]').tab('show');
+    });
+</script>
+								</div>
+								
+							</div>
+						</div>
+					</div></div><div id="s-lg-box-wrapper-19618797" class="s-lg-box-wrapper-19618797">
+					<div id="s-lg-box-16612988-container" class="s-lib-box-container">
+						<div id="s-lg-box-16612988" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Important Packages
+                                </h2>
+							<div id="s-lg-box-collapse-16612988">
+								<div class="s-lib-box-content">
+									<div id="s-lib-ctabs-16612988" class="s-lib-jqtabs">
+    <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612988-0" role="tab" data-toggle="tab">Packages</a></li>
+                    <li role="presentation"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612988-1" role="tab" data-toggle="tab">APA Citations</a></li>
+            </ul>
+    <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="s-lib-ctab-16612988-0">
+                
+			<div id="s-lg-content-36671575" class="  clearfix">
+				<p>Packages are extra functions that you can download to do fun things in R that don't come pre-downloaded. There are many, many packages available for the various needs of R users. The packages included below are the ones that tend to be most useful for completing bioinformatic analyses in R.</p>
+
+<p><strong>ggplot2&nbsp;<img alt="" loading="lazy" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/ggplot2_logo.png" style="width: 65px; height: 75px; float: right; margin-top: 5px; margin-bottom: 5px;"></strong></p>
+
+<p>ggplot2&nbsp; is used for data visualization. Bar charts, scatter plots, violin plots-you name it there's a way to do it with GGplot.&nbsp;</p>
+
+		   </div><div class=""><ul id="s-lg-link-list-3437308" class="s-lg-link-list s-lg-link-list-5"><li class=""><div id="s-lg-content-36671938" class="s-lg-book clearfix"><div class="s-lg-book-props"><a href="https://ggplot2-book.org/index.html" onclick="return springSpace.springTrack.trackLink({link: this,_st_type_id: &#39;3&#39;,_st_content_id: &#39;36671938&#39;,_st_inc_return: this});"><span id="s-lg-book-cover-36671938" class="s-lg-book-cover"><img loading="lazy" alt="Cover Art" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/index(2).aspx" class="pull-left s-lg-book-cover-img-0"></span><span id="s-lg-book-title-36671938" class="s-lg-book-title">Ggplot2</span><span id="s-lg-book-by-36671938" class="s-lg-book-by"> by </span><span id="s-lg-book-author-36671938" class="s-lg-book-author">Hadley Wickham</span></a><div class="s-lg-book-prop-isbn">ISBN: 9783319242774</div><div class="s-lg-book-prop-pubdate">Publication Date: 2016-06-08</div></div></div></li></ul></div>
+			<div id="s-lg-content-36671939" class="  clearfix">
+				<p>This is an online book that is generally considered the gold standard of GGplot references. It is written by Hadley Wickham, who is a long time R developer and chief scientist at posit. Browse the table of contents located on the left side of the page, or try using the search function in the upper left corner to find a specific resource. This resource has a lot of information that can be useful to beginners, especially if you are interested in the underlying theory and grammar of R.&nbsp;</p>
+
+<p><a href="http://r-statistics.co/ggplot2-Tutorial-With-R.html">Online ggplot2 tutorial</a></p>
+
+<p>This is very similar to the resource above, but it provides more practical examples that can be replicated on your own computer.&nbsp;</p>
+
+<p><a href="http://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf">ggplot2 cheatsheet</a></p>
+
+<p>Posit creates its own cheat sheets for commonly used packages. This is the one they have generated for ggplot2. It breaks down the use of ggplot2 according to the variable types you are trying to visualize (for example, it gives you all the options you have when you have two discrete variables). This is not an extensive resource, but it couples well with the more descriptive resources linked above.&nbsp;</p>
+
+<p><a href="https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf">CRAN-Documentation for ggplot2</a></p>
+
+<p>This is the official documentation for the package. You can consider this a dictionary of all the functions that are found in the package. To beginner users, these documents can be a little intimidating, but its is good to familiarize yourself with these as they are very common and give a full overview of what is available in the package instead of just what tutorial writers have decided to highlight.&nbsp;<br>
+&nbsp;</p>
+
+<hr>
+<p><img alt="" loading="lazy" src="./PREVIEW Get Started with R - Getting Started with R for Bioinformatics - LibGuides at McGill University School of Information Studies_files/logo.png" style="float: right; width: 80px; height: 80px; margin: 30px 20px;"><strong>Tidyverse</strong></p>
+
+<p>Tidyverse can be considered a package of packages. Tidyverse contains all the different packages you might need to clean data. There are a lot of different tasks that fall under cleaning data but the big ones are normally separating or combining columns, summarizing data and joining data in two or more separate tables. The most commonly used packages are Tidyr and Dplyr.&nbsp;&nbsp;</p>
+
+<p><a href="https://posit.co/wp-content/uploads/2022/10/tidyr.pdf">Tidyr Cheatsheet</a></p>
+
+<p>Tidyr has all the functions you need to split cells, combine cells, handle missing values and pivot tables between long and wide formats. This is the cheat sheet provided by posit that shows you all the options you have available with textual and visual explanations of what will happen with your data.&nbsp;</p>
+
+<p><a href="https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf">Dplyr Cheatsheet</a></p>
+
+<p>Dplyr has the functions you need to do different summarizing activities-for example, figuring out how many times a name appears in a column. Like the cheet sheet for tidyverse, it shows you all the options you have available with textural and visual explanations of what will happen with your data.&nbsp;&nbsp;&nbsp;<br>
+&nbsp;</p>
+
+<hr>
+<p><strong>Bioconductor</strong></p>
+
+<p>Almost every bioinformatic analysis will use the bioconductor package. Instead of doing things like cleaning or visualizing data, biocinductor will give you the resources you need to do things like microbiome or phylogenetic analyses.&nbsp;</p>
+
+<p><a href="https://brouwern.github.io/lbrb/installing-bioconductor.html">Installing Bioconductor &nbsp;</a>&nbsp;</p>
+
+<p>Bioiconductor is not installed like the other packages, so you will have to click on the link above and follow the instructions to download it. When it comes to using the different packages, there will be explanation in different analysis specific tutorials. Some examples of these can be seen <a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5278933#s-lg-box-wrapper-19619458">here</a>.&nbsp;</p>
+
+		   </div>
+            </div>
+                    <div role="tabpanel" class="tab-pane " id="s-lib-ctab-16612988-1">
+                
+			<div id="s-lg-content-36674312" class="  clearfix">
+				<p style="text-indent: -17px; padding-left: 17px;">Comprehensive R Archive Network. (2023, February&nbsp;10).&nbsp;<em>ggplot2: create elegant data visualisations using the grammar of graphics</em>.&nbsp;https://cloud.r-project.org/web/packages/ggplot2/ggplot2.pdf</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Coghlan, A. (2022). <i>A little book of R for bioinformatics&nbsp;</i>[eBook edition]. https://brouwern.github.io/lbrb/installing-bioconductor.html&nbsp;</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Posit. (2021). D<em>ata visualization with ggplot2 : : CHEAT SHEET</em>&nbsp;[Infographic].posit.co.&nbsp;<a href="https://www.hatchmed.com/blog/2017/1/30/8-ways-to-improve-patient-satisfaction">https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf</a></p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Posit. (2021).&nbsp;<em>Data tidying with tidyr : : CHEAT SHEET</em>&nbsp;[Infographic].posit.co.&nbsp;https://posit.co/wp-content/uploads/2022/10/tidyr.pdf</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Posit. (2021).<em>Data transformation with dplyr : : CHEAT SHEET</em> [Infographic].posit.co.&nbsp;https://posit.co/wp-content/uploads/2022/10/tidyr.pdf</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Prabhakaran, S. (2017).&nbsp;<em>How to make any plot in ggplot2</em>. r-statistics.&nbsp;https://r-statistics.co/ggplot2-Tutorial-With-R.html</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Wickham, H. (2016). <em>Ggplot2 : elegant graphics for data analysis</em>. Springer. https://doi.org/10.1007/978-3-319-24277-4</p>
+
+<p>&nbsp;</p>
+
+		   </div>
+            </div>
+            </div>
+</div>
+<script>
+    // Every time a tab is switched, remove the tabindex for accessibility and keyboard nav
+    jQuery('#s-lib-ctabs-16612988 ul.nav-tabs li a').on('shown.bs.tab', function (e) {
+        jQuery('#s-lib-ctabs-16612988 ul.nav-tabs li a').removeAttr('tabindex');
+    });
+
+    // Support direct linking to tabs
+    jQuery(function() {
+        var hash = window.location.hash;
+
+        // Don't try to acccess garbage parameters
+        if (hash.length === 0 || jQuery('.s-lib-jqtabs a[href="' + hash + '"]').get(0) === undefined) {
+            return;
+        }
+
+        // Show the tab
+        jQuery('.s-lib-jqtabs a[href="' + hash + '"]').tab('show');
+    });
+</script>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div><div id="s-lg-col-3" class="col-md-3"><div class="s-lg-col-boxes"><div id="s-lg-box-wrapper-19618783" class="s-lg-box-wrapper-19618783">
+					<div id="s-lg-box-16612976-container" class="s-lib-box-container">
+						<div id="s-lg-box-16612976" class="s-lib-box s-lib-box-std">
+							<h2 class="s-lib-box-title">Getting Started with R
+                                </h2>
+							<div id="s-lg-box-collapse-16612976">
+								<div class="s-lib-box-content">
+									<div id="s-lib-ctabs-16612976" class="s-lib-jqtabs">
+    <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612976-0" role="tab" data-toggle="tab">Resources</a></li>
+                    <li role="presentation"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5277946&amp;preview=0c68c1d45946ac3321fd10154d0c1329#s-lib-ctab-16612976-1" role="tab" data-toggle="tab">APA Citations</a></li>
+            </ul>
+    <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="s-lib-ctab-16612976-0">
+                
+			<div id="s-lg-content-36671545" class="  clearfix">
+				<p><a href="https://cran.r-project.org/">Install R</a></p>
+
+<p>This link will take you to the CRAN website where there are instructions and associated files you need to download R for your computer. It will give you all the different options so you can select the one that works well for your operating system. This is the official organization that manages the R software package.</p>
+
+<p><a href="https://posit.co/downloads/">Install R Studio</a>&nbsp;</p>
+
+<p>RStudio is the most popular way to interact and write code in R. This link gives you the resources and instructions you need to download the application. When you click the link, it will again give you different options depending on the operating system on your computer.&nbsp;</p>
+
+		   </div>
+            </div>
+                    <div role="tabpanel" class="tab-pane " id="s-lib-ctab-16612976-1">
+                
+			<div id="s-lg-content-36674323" class="  clearfix">
+				<p style="text-indent: -17px; padding-left: 17px;">The Comprehensive R Archive Network (2022, October&nbsp;10).&nbsp;<em>Download and install R</em>.&nbsp;https://cran.r-project.org/</p>
+
+<p style="text-indent: -17px; padding-left: 17px;">Posit (2023). <i>Download RStudio IDE.&nbsp;</i>https://posit.co/downloads/</p>
+
+		   </div>
+            </div>
+            </div>
+</div>
+<script>
+    // Every time a tab is switched, remove the tabindex for accessibility and keyboard nav
+    jQuery('#s-lib-ctabs-16612976 ul.nav-tabs li a').on('shown.bs.tab', function (e) {
+        jQuery('#s-lib-ctabs-16612976 ul.nav-tabs li a').removeAttr('tabindex');
+    });
+
+    // Support direct linking to tabs
+    jQuery(function() {
+        var hash = window.location.hash;
+
+        // Don't try to acccess garbage parameters
+        if (hash.length === 0 || jQuery('.s-lib-jqtabs a[href="' + hash + '"]').get(0) === undefined) {
+            return;
+        }
+
+        // Show the tab
+        jQuery('.s-lib-jqtabs a[href="' + hash + '"]').tab('show');
+    });
+</script>
+								</div>
+								
+							</div>
+						</div>
+					</div></div></div></div></div><div class="row s-lg-row"><div id="s-lg-col-127" class="col-md-12"><div class="s-lg-col-boxes"></div></div></div>    <ul id="s-lg-page-prevnext" class="pager s-lib-hide"><li class="previous"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5279206&amp;preview=0c68c1d45946ac3321fd10154d0c1329">&lt;&lt; <strong>Previous:</strong> Home</a></li><li class="next"><a href="https://mcgill-lis.libguides.com/c.php?g=733912&amp;p=5278933&amp;preview=0c68c1d45946ac3321fd10154d0c1329"><strong>Next:</strong> Bioinformatic Analyses &gt;&gt;</a></li></ul></div>
+<!-- END: Guide Content -->
+<!-- BEGIN: Page Footer -->
+<div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+        <ul id="s-lg-guide-header-attributes" class="">
+            <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">Last Updated:</span> <span class="s-lg-text-greyout">Feb 24, 2023 11:02 AM</span>            </li>
+            <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                <span class="s-lg-guide-label">URL:</span> <span class="s-lg-text-greyout">https://mcgill-lis.libguides.com/c.php?g=733912</span>            </li>
+            <li id="s-lg-guide-print-url">
+                <a href="javascript: window.print();"><i class="fa fa-print" aria-hidden="true" title="Print Page"></i> Print Page</a>            </li>
+        </ul>
+        <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+            <a href="https://mcgilllis.libapps.com/libapps/login.php?site_id=13229&amp;target64=L2xpYmd1aWRlcy9hZG1pbl9jLnBocD9nPTczMzkxMiZwPTUyNzc5NDY=">Login to LibApps</a>        </div>
+    </div>
+    <div class="pad-bottom-sm clearfix">
+        <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+                    </div>
+        <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                    </div>
+        <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                    </div>
+    </div>
+</div>
+<!-- END: Page Footer -->
+<!-- scroll_top.twig -->
+<div id="s-lib-scroll-top">
+    <a href="javascript:void(0);" onclick="jQuery(&#39;body&#39;).focus();" title="Back to Top" aria-label="Back to Top">
+        <span class="fa-stack fa-lg" aria-hidden="true">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+        </span>
+    </a>
+</div>
+<!-- !scroll_top.twig -->
+<div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+                <!-- BEGIN: Custom Footer -->
+                
+
+		<!-- END: Custom Footer -->
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
